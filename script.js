@@ -11,6 +11,7 @@ const addTodo= () => {
     p.innerHTML=inputText;
     li.appendChild(p);
 
-    toDoList.appendChild(li);
+    todoList.appendChild(p);
+    inputBox.value="";
 }
 addBtn.addEventListener('click', addTodo );
