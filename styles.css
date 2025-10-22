@@ -22,6 +22,7 @@ body{
     max-width:500px;
     text-align:center;
     padding:20px;
+    
 }
 .input-container input{
     border:none;
@@ -30,6 +31,7 @@ body{
     margin-block:12px;
     border-radius:4px;
     font-size:16px;
+    justify-content:center;
 }
 
 .input-container input[type="text"]{
@@ -64,4 +66,35 @@ ul li{
     border:0.125px solid #a19f9f;
     padding:6px 12px;
     background-color:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition: background-color 0.5s;
+}
+
+ul li p{
+    flex-grow:1;
+    padding:2px;
+}
+
+ul li p:hover{
+    background-color:rgb(220, 220, 220);
+    border-radius:4px;
+}
+.btn{
+    border:none;
+    outline:none;
+    font-size:16px;
+    background-color:none;
+    font-weight:600;
+    cursor:pointer;
+}
+.deleteBtn{
+    color:#ff4d4d;
+    margin-left:8px;
+}
+
+.editBtn{
+    color:#4d79ff;
+    margin-left:8px;
 }
