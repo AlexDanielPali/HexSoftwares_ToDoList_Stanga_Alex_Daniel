@@ -1,28 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My To-Do List</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>  
-        <div class="container">
-            <div class="input-container">
-                <h1>My To-Do List</h1>
-                <input type="text" placeholder="Add a new task..." id="inputBox">
-                <input type="button" value="Add" id="addBtn"></button>
-            </div>
-            <ul class="todoList" id="todoList">
-                <!-- <li><p> Task1 <p> </li>
-                <li>Task2</li>
-                <li>Task3</li>
-                <li>Task4</li>
-                <li>Task5</li> -->
-            </ul>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <script src="script.js"></script>
-    </body>
+  <!-- Makes the website responsive on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My To-Do List</title>
+
+  <!-- Link to external CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- ===================== INPUT SECTION ===================== -->
+    <div class="input-container">
+      <h1>My To-Do List</h1>
+      <h2>
+        You have done 
+        <span id="completedCount">0</span> 
+        out of 
+        <span id="totalCount">0</span> 
+        tasks!
+      </h2>
+
+      <!-- Motivational quote (updated dynamically by JS) -->
+      <p id="quote"></p>
+
+      <!-- Task input field -->
+      <input type="text" placeholder="Add a new task..." id="inputBox">
+
+      <!-- Category selector -->
+      <select id="category">
+        <option value="Personal">Personal</option>
+        <option value="Work">Work</option>
+        <option value="Urgent">Urgent</option>
+      </select>
+
+      <!-- Urgency selector -->
+      <select id="urgency">
+        <option value="Low">Low</option>
+        <option value="Medium" selected>Medium</option>
+        <option value="High">High</option>
+      </select>
+
+      <!-- Add button -->
+      <input type="button" value="Add" id="addBtn">
+    </div>
+
+    <!-- ===================== CONTROL PANEL ===================== -->
+    <div class="control-row">
+      <!-- Manual sorting options -->
+      <select id="sortSelect">
+        <option value="default">Sort by...</option>
+        <option value="highToLow">Urgency: High → Low</option>
+        <option value="lowToHigh">Urgency: Low → High</option>
+        <option value="category">Category (A - Z)</option>
+      </select>
+
+      <!-- Smart auto-sort toggle -->
+      <div class="smart-sort-toggle">
+        <label>
+          <input type="checkbox" id="smartSortToggle" checked>
+          Auto-Sort by Urgency
+        </label>
+      </div>
+
+      <!-- Dark mode button -->
+      <button id="themeToggle">🌙 Dark Mode</button>
+    </div>
+
+    <!-- ===================== TASK LIST ===================== -->
+    <!-- All tasks will be dynamically added here via JS -->
+    <ul id="todoList"></ul>
+
+  </div>
+
+  <!-- JavaScript file for app functionality -->
+  <script src="script.js"></script>
+</body>
 </html>

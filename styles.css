@@ -1,100 +1,291 @@
+/* ==============================
+   Import Google Font
+============================== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+/* ==============================
+   Global Resets & Base Styles
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-body{
-    background-color:rgb(232,238,238);
-}
-.container{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    margin-top:20px;
-}
-.input-container{
-    width:100%;
-    max-width:500px;
-    text-align:center;
-    padding:20px;
-    
-}
-.input-container input{
-    border:none;
-    outline:none;
-    padding:12px;
-    margin-block:12px;
-    border-radius:4px;
-    font-size:16px;
-    justify-content:center;
+body {
+  background-color: rgb(232, 238, 238);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.input-container input[type="text"]{
-    width:700px;
-}
-.input-container input[type="button"]{
-    background-color:#3da33d;
-    color:#fff;
-    font-weight:700;
-    margin-left:8px;
-    cursor:pointer;
-    padding:12px 24px;
-}
-
-input-container input[type="button"]:hover{
-    background-color:#60b160;
+/* ==============================
+   Main Container
+============================== */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 800px;
+  margin-inline: auto;
 }
 
-ul{
-    width:100%;
-    max-width:450px;
-    display:flex;
-    justify-content:center;
-    flex-direction:column;
-    align-items:center;
-}
-ul li{
-    list-style-type:none;
-    cursor:pointer;
-    margin-block-end: 12px;
-    border-radius:8px;
-    border:0.125px solid #a19f9f;
-    padding:6px 12px;
-    background-color:#ffffff;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    transition: background-color 0.5s;
+/* ==============================
+   Input Section
+============================== */
+.input-container {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
 }
 
-ul li p{
-    flex-grow:1;
-    padding:2px;
+.input-container h1 {
+  width: 100%;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-ul li p:hover{
-    background-color:rgb(220, 220, 220);
-    border-radius:4px;
-}
-.btn{
-    border:none;
-    outline:none;
-    font-size:16px;
-    background-color:none;
-    font-weight:600;
-    cursor:pointer;
-}
-.deleteBtn{
-    color:#ff4d4d;
-    margin-left:8px;
+.input-container h2 {
+  width: 100%;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
 
-.editBtn{
-    color:#4d79ff;
-    margin-left:8px;
+.input-container p {
+  width: 100%;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+/* Input and button styles */
+.input-container input,
+.input-container select {
+  border: none;
+  outline: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Task input field width */
+.input-container input[type="text"] {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+
+/* Add button styling */
+.input-container input[type="button"] {
+  background-color: #3da33d;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 12px 24px;
+}
+
+.input-container input[type="button"]:hover {
+  background-color: #60b160;
+}
+
+/* ==============================
+   Task List
+============================== */
+ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul li {
+  list-style: none;
+  cursor: pointer;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #a19f9f;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Hover effect for task */
+ul li:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.02);
+}
+
+/* Task text styling */
+ul li p {
+  flex-grow: 1;
+  padding: 0 10px;
+  word-wrap: break-word;
+}
+
+/* ==============================
+   Buttons (Edit/Delete)
+============================== */
+.btn {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.deleteBtn {
+  color: #ff4d4d;
+}
+
+.editBtn {
+  color: #4d79ff;
+}
+
+/* ==============================
+   Category & Urgency Badges
+============================== */
+.category, .urgency {
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 12px;
+  margin-left: 6px;
+  font-weight: bold;
+}
+
+/* Category color (green) */
+.category {
+  background-color: #3da33d;
+  color: white;
+}
+
+/* Urgency colors */
+.urgency.low {
+  background-color: #8bc34a;
+  color: #fff;
+}
+.urgency.medium {
+  background-color: #ffb74d;
+  color: #fff;
+}
+.urgency.high {
+  background-color: #e53935;
+  color: #fff;
+}
+
+/* ==============================
+   Control Row (Sort + Theme)
+============================== */
+.control-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+/* Smart sort toggle box */
+.smart-sort-toggle {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 6px;
+  background-color: #e9ecef;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.smart-sort-toggle input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* ==============================
+   Dark Mode Styles
+============================== */
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark li {
+  background-color: #222;
+  border-color: #555;
+}
+
+body.dark input,
+body.dark button,
+body.dark select {
+  background-color: #333;
+  color: #eee;
+}
+
+body.dark .smart-sort-toggle {
+  background-color: #2a2a2a;
+}
+
+/* ==============================
+   RESPONSIVENESS
+============================== */
+
+/* Tablet view (≤ 768px) */
+@media (max-width: 768px) {
+  .input-container input[type="text"],
+  .input-container select,
+  .input-container input[type="button"] {
+    width: 100%;
+  }
+
+  .control-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile view (≤ 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .category, .urgency {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
 }
