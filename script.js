@@ -21,8 +21,6 @@ function createTodoElement(todo) {
   p.textContent = todo.text;
   li.appendChild(p);
 
-  
-
   const urgency = document.createElement('span');
   urgency.classList.add('urgency', todo.urgency.toLowerCase());
   urgency.textContent = todo.urgency;
@@ -166,9 +164,7 @@ sortSelect.addEventListener('change', (e) => {
     todos.sort((a, b) => urgencyRank(b.urgency) - urgencyRank(a.urgency));
   } else if (sortValue === 'lowToHigh') {
     todos.sort((a, b) => urgencyRank(a.urgency) - urgencyRank(b.urgency));
-  } else if (sortValue === 'category') {
-    todos.sort((a, b) => a.category.localeCompare(b.category));
-  }
+  } 
 
   localStorage.setItem('todos', JSON.stringify(todos));
   todoList.innerHTML = '';
