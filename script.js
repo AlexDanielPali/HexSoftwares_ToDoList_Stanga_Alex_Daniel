@@ -69,7 +69,7 @@ function addTodo() {
     return;
   }
 
-  const newTodo = { text: inputText, done: false, category, urgency };
+  const newTodo = { text: inputText, done: false, urgency };
   saveLocalTodos(newTodo);
   inputBox.value = "";
   smartSort();
