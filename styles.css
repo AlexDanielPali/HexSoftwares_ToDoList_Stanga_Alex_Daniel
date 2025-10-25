@@ -158,21 +158,9 @@ ul li p {
 }
 
 /* ==============================
-   Category & Urgency Badges
+   Urgency Badges
 ============================== */
-.category, .urgency {
-  border-radius: 8px;
-  padding: 2px 8px;
-  font-size: 12px;
-  margin-left: 6px;
-  font-weight: bold;
-}
 
-/* Category color (green) */
-.category {
-  background-color: #3da33d;
-  color: white;
-}
 
 /* Urgency colors */
 .urgency.low {
@@ -284,7 +272,7 @@ body.dark .smart-sort-toggle {
     padding: 6px 10px;
   }
 
-  .category, .urgency {
+.urgency {
     font-size: 11px;
     padding: 2px 6px;
   }

@@ -2,7 +2,7 @@ const inputBox = document.getElementById('inputBox');
 const addBtn = document.getElementById('addBtn');
 const todoList = document.getElementById('todoList');
 const themeToggle = document.getElementById('themeToggle');
-const categorySelect = document.getElementById('category');
+
 const urgencySelect = document.getElementById('urgency');
 const sortSelect = document.getElementById('sortSelect');
 let editTodo = null;
@@ -21,10 +21,7 @@ function createTodoElement(todo) {
   p.textContent = todo.text;
   li.appendChild(p);
 
-  const category = document.createElement('span');
-  category.classList.add('category');
-  category.textContent = todo.category;
-  li.appendChild(category);
+  
 
   const urgency = document.createElement('span');
   urgency.classList.add('urgency', todo.urgency.toLowerCase());
@@ -55,7 +52,6 @@ function createTodoElement(todo) {
 //  Add or edit a task
 function addTodo() {
   const inputText = inputBox.value.trim();
-  const category = categorySelect.value;
   const urgency = urgencySelect.value;
 
   if (inputText.length <= 0) {
@@ -130,9 +126,8 @@ function saveCompletionState() {
   document.querySelectorAll('#todoList li').forEach(li => {
     const text = li.querySelector('p').textContent;
     const done = li.querySelector('.checkTask').checked;
-    const category = li.querySelector('.category').textContent;
     const urgency = li.querySelector('.urgency').textContent;
-    todos.push({ text, done, category, urgency });
+    todos.push({ text, done, urgency });
   });
   localStorage.setItem('todos', JSON.stringify(todos));
 }
