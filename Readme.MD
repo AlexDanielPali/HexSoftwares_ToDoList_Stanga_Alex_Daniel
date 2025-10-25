@@ -45,12 +45,13 @@ Fully optimized for mobile, tablet, and desktop viewports.
 
 1. Clone the repository
 
-git clone https://github.com/your-username/todo-list-website.git
+git clone {Repository-name}
 
 
 2. Navigate into the folder
 
 cd todo-list-website
+
 
 
 3. Open the index.html file in your browser
