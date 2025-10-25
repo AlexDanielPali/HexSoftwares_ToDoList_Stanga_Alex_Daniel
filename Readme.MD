@@ -15,7 +15,7 @@ Automatically sorts tasks by urgency (High → Low).
 Manual sorting options also available (by urgency or category).
 
 4. Task Categories & Urgency Levels
-Each task can be assigned a category (e.g., Work, Personal) and urgency (Low, Medium, High).
+Each task can be assigned an urgency (Low, Medium, High).
 
 5. Dark Mode Toggle 
 Switch between light and dark themes — your preference is saved automatically.
